@@ -96,7 +96,7 @@ describe('functions', () => {
                 new NumberIncremented(2)
             ];
 
-            let num = 0;
+            /*let num = 0;
             actions.forEach(a => {
                 switch (a.type) {
                     case 'Increment': {
@@ -110,7 +110,22 @@ describe('functions', () => {
                         num = 0;
                     }
                 }
-            })
+            })*/
+
+            let initialState = 0;
+            const num = actions.reduce((s, n) => {
+                switch (n.type) {
+                    case 'Increment': {
+                        return s += n.incrementedBy;
+                    }
+                    case 'Decrement': {
+                        return s -= n.decrementedBy;
+                    }
+                    case 'Reset': {
+                        return s = 0;
+                    }
+                }
+            }, initialState)
 
             expect(num).toBe(5);
 

@@ -287,18 +287,7 @@ describe('types', () => {
 
             expect(add(2, 2)).toBe(4);
 
-            //anonymous immediately invoked function expression (IIFE)
-            expect((function (a, b) { return a + b; })(3, 2)).toBe(5);
 
-            type MathOp = (a: number, b: number) => number;
-
-
-            // Named Function
-            function add(a: number, b: number): number {
-                return a + b
-            }
-
-            expect(add(2, 2)).toBe(4);
 
             // anonymous immediately invoked function expression (IIFE)
             expect((function (a, b) { return a + b; })(3, 2)).toBe(5);
